@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login Page</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/validateForm.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <img class="background" src="./images/carLogin.jpg" alt="Login background image">
+      <div class="content">
+        <section>
+          <h2 id="header">Vehicle Post & Sell 2022</h2>
+	      <div id="login">
+            <form onsubmit="return validateLogin()" action="index.html">
+              <table>
+                <tr>
+                  <td>
+                    <label id="username_lbl" for="username">Username:</label>
+                  </td>
+			      <td>
+			        <input type="text" id="username" name="username">
+			      </td>
+			    </tr>
+			    <tr>
+			      <td>
+			        <label id="password_lbl" for="password">Password:</label>
+			      </td>
+			      <td>
+			        <input type="password" id="password" name="password">
+			      </td>
+			    </tr>
+		      </table>
+		      <input id="formSubmit" type="submit" class="submitButton" value="Login">
+		    </form>
+	      </div>
+	    </section>
+	    <hr>
+	    <section class="thick">
+	      <div id="errorMessage"></div>
+	    </section>
+	  </div>
+	</div>
+  </body>
+</html>

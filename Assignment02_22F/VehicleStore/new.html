@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sell Your Vehicle</title>
+	<meta charset="UTF-8">  
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/validateForm.js"></script>
+    
+  </head>
+  <body>
+    <div class="wrapper">
+      <img class="background" src="./images/carNew.jpg" alt="New car background image">
+      <div class="content">
+        <section>
+          <h2 id="header">Please Your Vehicle for Sale</h2>
+	      <div id="newData">
+            <form onsubmit="return validateForm()" action="display.html">
+              <table>
+                <tr>
+                  <td>
+                    <label id="sellerName_lbl" for="sellerName">Seller Name:</label>
+                  </td>
+			      <td>
+			        <input type="text" id="sellerName" name="sellerName">
+			      </td>
+			    </tr>
+			    <tr>
+			      <td>
+			        <label id="address_lbl" for="address">Address:</label>
+			      </td>
+			      <td>
+			        <input type="text" id="address" name="address">
+			      </td>
+			    </tr>
+			    <tr>
+			      <td>
+			        <label id="city_lbl" for="city">City:</label>
+			      </td>
+			      <td>
+			        <input type="text" id="city" name="city">
+			      </td>
+			    </tr>
+			    <tr>
+			      <td>
+			        <label id="phone_lbl" for="phone">Phone:</label>
+			      </td>
+			      <td>
+			        <input type="text" id="phone" name="phone">
+			      </td>
+			    </tr>
+			    <tr>
+			      <td>
+		    	    <label id="email_lbl" for="email">Email:</label>
+		    	  </td>
+			      <td>
+			        <input type="text" id="email" name="email">
+			      </td>
+			    </tr>
+		    	<tr>
+			      <td>
+			        <label id="make_lbl" for="make">Make:</label>
+			      </td>
+			      <td>
+			        <input type="text" id="make" name="make">
+			      </td>
+			    </tr>
+			    <tr>
+			      <td>
+			        <label id="model_lbl" for="model">Model:</label>
+			      </td>
+			      <td>
+			        <input type="text" id="model" name="model">
+			      </td>
+			    </tr>
+			    <tr>
+			      <td>
+			        <label id="year_lbl" for="year">Year:</label>
+		          </td>
+			      <td>
+			        <input type="text" id="year" name="year">
+			      </td>
+			    </tr>
+		      </table>
+		      <input id="formSubmit" type="submit" class="submitButton" value="Submit">
+		    </form>
+	      </div>
+	    </section>
+	    <hr>
+	    <section class="thick">
+	      <div id="errorMessage"></div>
+	    </section>
+	    <hr class="solid">
+	    <section class="thick">
+	      <a id="goHome" class="button" href="index.html">Home</a>
+	      <a id="goNew" class="pressedButton">Post New Vehicle</a>
+	      <a id="goSale" class="button" href="sale.html">Vehicles for Sale</a>
+	      <a id="goAdmin" class="button" href="admin.html">Admin Page</a>
+	      <a id="goLogout" class="button" href="login.html">Logout</a>
+	    </section>
+	  </div>
+    </div>
+  </body>
+</html>
