@@ -27,7 +27,7 @@ namespace Assignment02_22F
             }
         }
 
-        //Example showing you how to use the rootPath variable to get to any page of the VehicleStore
+        //Example showing you how to use the rootPath variable to get to any page of the VehicleStore.
         [TestMethod]
         public void TestExample()
         {
