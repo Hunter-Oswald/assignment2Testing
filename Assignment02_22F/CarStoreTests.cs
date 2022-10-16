@@ -185,5 +185,57 @@ namespace Assignment02_22F
 
         }
 
+        // Test 8 - Navigating from post new vehicles to vehicles for sale
+        [TestMethod]
+        public void navigatingNewVehicles_ToVehiclesForSale()
+        {
+            // set url
+            driver.Navigate().GoToUrl(Path.Combine(rootPath, "new.html"));
+
+            // get button and click it
+            IWebElement buttonToVehiclepostings = driver.FindElement(By.Id("goSale"));
+
+            buttonToVehiclepostings.Click();
+
+            // Assert
+            // should be on the vehicle postings page
+            Assert.IsTrue(driver.Url.Contains("sale.html"));
+        }
+
+        // Test 9 - navigate from post new car to the admin page
+
+        [TestMethod]
+        public void navigateFromPostNew_ToAdmin()
+        {
+            // set url
+            driver.Navigate().GoToUrl(Path.Combine(rootPath, "new.html"));
+
+            // find button and press
+            IWebElement buttonToAdmin = driver.FindElement(By.Id("goAdmin"));
+
+            buttonToAdmin.Click();
+
+            // Assert
+            // should be on the admin page
+            Assert.IsTrue(driver.Url.Contains("admin.html"));
+        }
+        
+        // Test 10 - navigate from the post new car page to the login page
+        [TestMethod]
+        public void navigateFromPostNew_ToLogin()
+        {
+            // Set URL
+            driver.Navigate().GoToUrl(Path.Combine(rootPath, "new.html"));
+
+            // Find button and press
+            IWebElement logoutButton = driver.FindElement(By.Id("goLogout"));
+
+            logoutButton.Click();
+
+            // Assert
+            // should be on the login page
+            Assert.IsTrue(driver.Url.Contains("login.html"));
+        }
+
     }
 }
