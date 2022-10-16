@@ -131,5 +131,59 @@ namespace Assignment02_22F
             // make sure on the right page; should leave you at the login page
             Assert.IsTrue(driver.Url.Contains("login.html"));
         }
+
+        // Test 6 - Home page to new car listing
+        [TestMethod]
+        public void navigateHome_ToNewCarListing()
+        {
+            // start at the home page
+            driver.Navigate().GoToUrl(Path.Combine(rootPath, "index.html"));
+
+            // get button and click
+            IWebElement newCarButton = driver.FindElement(By.Id("goNew"));
+            newCarButton.Click();
+
+            // Assert
+            // should be on the new car posting page
+            Assert.IsTrue(driver.Url.Contains("new.html"));
+        }
+
+        // Test 7 - creating a new car listing
+        [TestMethod]
+        public void makingNewCarListing()
+        {
+            // set the page at the new car listing page
+            driver.Navigate().GoToUrl(Path.Combine(rootPath, "new.html"));
+
+            // get text box elements
+            IWebElement sellerNameTextbox = driver.FindElement(By.Id("sellerName"));
+            IWebElement addressTextbox = driver.FindElement(By.Id("address"));
+            IWebElement cityTextbox = driver.FindElement(By.Id("city"));
+            IWebElement phoneNumTextbox = driver.FindElement(By.Id("phone"));
+            IWebElement emailTextbox = driver.FindElement(By.Id("email"));
+            IWebElement makeTextbox = driver.FindElement(By.Id("make"));
+            IWebElement modelTextbox = driver.FindElement(By.Id("model"));
+            IWebElement yearTextbox = driver.FindElement(By.Id("year"));
+
+            IWebElement postButton = driver.FindElement(By.Id("formSubmit"));
+
+            // enter inputs
+            sellerNameTextbox.SendKeys("Hunter");
+            addressTextbox.SendKeys("123 Fake street");
+            cityTextbox.SendKeys("Kitchener");
+            phoneNumTextbox.SendKeys("5195704321");
+            emailTextbox.SendKeys("fakeemail@forreal.com");
+            makeTextbox.SendKeys("Nissan");
+            modelTextbox.SendKeys("370Z");
+            yearTextbox.SendKeys("2001");
+
+            postButton.Click();
+
+            // Assert
+            // Should take you to the display page
+            Assert.IsTrue(driver.Url.Contains("display.html"));
+
+        }
+
     }
 }
